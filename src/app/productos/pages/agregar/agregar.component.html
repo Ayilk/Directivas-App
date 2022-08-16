@@ -1,5 +1,5 @@
 
-<h1 class="mt-5">Agregar producto</h1>
+<h1 class="mt-5">Agregar producto <small>{{texto1}}</small></h1>
 <hr>
 
 <form [formGroup]="miFormulario">
@@ -14,7 +14,9 @@
         </div>
 
         <div class="col-auto">
-            <span error-msg                  
+            <span error-msg 
+                  [mensaje]="texto1" 
+                  [color]="color"                
                   *ngIf="error('nombre')">
                 Este campo es requrido
             </span>
@@ -23,8 +25,17 @@
 
     <div class="row mt-3">
         <div class="col">
-            <button class="btn btn-primary">
+            <button class="btn btn-primary"
+                    (click)="cambiarNombre()">
                 Guardar
+            </button>
+
+            <!-- Forma fea de poner una separacion -->
+            &nbsp;
+
+            <button class="btn btn-primary "
+                    (click)="cambiarColor()">
+                Cambiar color
             </button>
         </div>
     </div>
