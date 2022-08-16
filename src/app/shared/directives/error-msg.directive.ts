@@ -28,6 +28,16 @@ export class ErrorMsgDirective implements OnInit, OnChanges{
     this.setMensaje();
   }
 
+  //Vamos a crearle una clase llamda hidden al input, fsicamente no va a desapareceer
+  //pero no se va a mostrar
+  @Input() set valido( valor: boolean ){
+    if( valor ){
+      this.htmlElement.nativeElement.classList.add('hidden');
+    }else{
+      this.htmlElement.nativeElement.classList.remove('hidden');
+    }
+   }
+
   // @Input() color: string ='red';
   //@Input() mensaje: string = 'Este campo es necesario';
 

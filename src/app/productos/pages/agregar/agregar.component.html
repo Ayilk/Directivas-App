@@ -17,7 +17,7 @@
             <span error-msg 
                   [mensaje]="texto1" 
                   [color]="color"                
-                  *ngIf="error('nombre')">
+                 [valido]="!error('nombre')">
                 Este campo es requrido
             </span>
         </div>
